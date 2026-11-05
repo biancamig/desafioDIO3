@@ -1,0 +1,20 @@
+BACKUP E RECOVERY - MYSQL
+
+1. BACKUP DO BANCO ECOMMERCE
+
+"C:\Program Files\MySQL\MySQL Server 26.7\bin\mysqldump.exe" -u root -p --single-transaction --set-gtid-purged=OFF --routines --events --triggers ecommerce > "C:\Users\SeuUsuario\ecommerce_backup.sql"
+
+
+2. RECOVERY DO BANCO ECOMMERCE
+
+"C:\Program Files\MySQL\MySQL Server 26.7\bin\mysql.exe" -u root -p ecommerce < "C:\Users\SeuUsuario\ecommerce_backup.sql"
+
+
+3. BACKUP DO BANCO COMPANY_CONSTRAINTS
+
+"C:\Program Files\MySQL\MySQL Server 26.7\bin\mysqldump.exe" -u root -p --single-transaction --set-gtid-purged=OFF --routines --events --triggers company_constraints > "C:\Users\SeuUsuario\company_backup.sql"
+
+
+4. RECOVERY DO BANCO COMPANY_CONSTRAINTS
+
+"C:\Program Files\MySQL\MySQL Server 26.7\bin\mysql.exe" -u root -p company_constraints < "C:\Users\SeuUsuario\company_backup.sql"
